@@ -12,6 +12,11 @@ angular.module('feedbakerApp', [
         templateUrl: 'partials/main',
         controller: 'DefaultCtrl'
       })
+      .when('/about', {
+        templateUrl: 'partials/about',
+        controller: 'DefaultCtrl',
+        authenticate: true
+      })
       .when('/login', {
         templateUrl: 'partials/login',
         controller: 'DefaultCtrl'
