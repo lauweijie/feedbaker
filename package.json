@@ -16,7 +16,7 @@
     "connect-mongo": "mrzepinski/connect-mongo#2135988",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
-    "passport-nus-openid": "~0.0.2",
+    "passport-nus-openid": "~0.0.3",
     "ejs": "~0.8.4"
   },
   "devDependencies": {

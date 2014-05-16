@@ -1,10 +1,10 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="jumbotron">
-  <h1>'Allo, 'Allo <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
+  <h1>Hello <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    Always a pleasure scaffolding your apps. <span ng-show="currentUser">{{ currentUser.email }}</span>
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
