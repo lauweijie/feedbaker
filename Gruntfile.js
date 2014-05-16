@@ -197,7 +197,7 @@ module.exports = function (grunt) {
       app: {
         html: '<%= yeoman.app %>/views/index.html',
         ignorePath: '<%= yeoman.app %>/',
-        exclude: ['bootstrap-sass']
+        exclude: []
       }
     },
 
