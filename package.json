@@ -1,6 +1,19 @@
 {
   "name": "feedbaker",
-  "version": "0.0.0",
+  "description": "Feedbaker is an online audience response system.",
+  "version": "0.0.1",
+  "maintainers": [
+    {
+      "name": "Jonathan Lau",
+      "email": "jon@jon.sg",
+      "web": "http://jon.sg/"
+    },
+    {
+      "name": "Jonathan Tan",
+      "email": "jhow.tan@gmail.com",
+      "web": "http://jhowt.com/"
+    }
+  ],
   "dependencies": {
     "express": "~4.0.0",
     "morgan": "~1.0.0",
@@ -73,5 +86,10 @@
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/lauweijie/feedbaker.git"
+  },
+  "homepage": "http://feedbaker.com/"
 }
