@@ -10,7 +10,7 @@ angular.module('feedbakerApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+        controller: 'DefaultCtrl'
       })
       .when('/login', {
         templateUrl: 'partials/login',
