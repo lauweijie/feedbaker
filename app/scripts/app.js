@@ -14,11 +14,11 @@ angular.module('feedbakerApp', [
       })
       .when('/login', {
         templateUrl: 'partials/login',
-        controller: 'LoginCtrl'
+        controller: 'DefaultCtrl'
       })
       .when('/settings', {
         templateUrl: 'partials/settings',
-        controller: 'SettingsCtrl',
+        controller: 'DefaultCtrl',
         authenticate: true
       })
       .otherwise({
