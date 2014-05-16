@@ -6,6 +6,9 @@ angular.module('feedbakerApp')
       'title': 'Home',
       'link': '/'
     }, {
+      'title': 'About',
+      'link': '/about'
+    }, {
       'title': 'Settings',
       'link': '/settings'
     }];

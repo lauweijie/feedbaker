@@ -21,6 +21,14 @@ angular.module('feedbakerApp', [
         controller: 'DefaultCtrl',
         authenticate: true
       })
+      .when('/app', {
+        redirectTo: '/app/dashboard'
+      })
+      .when('/app/dashboard', {
+        templateUrl: 'partials/dashboard',
+        controller: 'DefaultCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
