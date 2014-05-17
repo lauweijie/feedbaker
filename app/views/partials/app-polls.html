@@ -4,7 +4,7 @@
 
   <h3>My Polls</h3>
 
-  <div class="table-responsive">
+  <div class="table-responsive" ng-show="polls.length">
     <table class="table table-striped">
       <thead>
         <tr>
@@ -29,6 +29,9 @@
         </tr>
       </tbody>
     </table>
-</div>
+  </div>
+  <div ng-show="!polls.length">
+    <p>You do not have any polls at the moment.</p>
+  </div>
 
 </div>
