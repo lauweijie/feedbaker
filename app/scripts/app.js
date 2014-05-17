@@ -30,8 +30,13 @@ angular.module('feedbakerApp', [
         redirectTo: '/app/dashboard'
       })
       .when('/app/dashboard', {
-        templateUrl: 'partials/dashboard',
+        templateUrl: 'partials/app-dashboard',
         controller: 'DefaultCtrl',
+        authenticate: true
+      })
+      .when('/app/polls', {
+        templateUrl: 'partials/app-polls',
+        controller: 'AppPollsCtrl',
         authenticate: true
       })
       .otherwise({
