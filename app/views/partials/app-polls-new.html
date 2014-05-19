@@ -1,0 +1,38 @@
+<div ng-include="'partials/app-navbar'"></div>
+
+<h3>New Poll</h3>
+
+<p>Specify your poll question and the type of poll and you're ready to go!</p>
+
+<form role="form" name="newPoll">
+  <div class="form-group" ng-class="{'has-success has-feedback': !newPoll.question.$error.minlength && !newPoll.question.$error.required}">
+    <label for="question">Poll question</label>
+    <input type="text" class="form-control" name="question" id="question" placeholder="Ask a question" required ng-model="poll.question" ng-minlength="5">
+    <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="!newPoll.question.$error.maxlength && !newPoll.question.$error.minlength"></span>
+  </div>
+  <div class="form-group">
+    <label>Question type</label>
+    <div>
+      <label class="btn btn-default" ng-model="poll.type" btn-radio="1">Multiple Choice</label>
+      <label class="btn btn-default" ng-model="poll.type" btn-radio="2">Short Answer</label>
+      <label class="btn btn-default" ng-model="poll.type" btn-radio="3">Open Ended</label>
+    </div>
+  </div>
+
+  <div class="form-group" ng-show="poll.type == 1">
+    <label for="numChoices">Number of choices</label>
+    <input type="number" class="form-control" name="numChoices" id="numChoices" ng-model="numChoices" min="2" max="8">
+  </div>
+
+  <div ng-show="poll.type == 1">
+    <label for="choice0">Choices</label>
+    <div class="form-group" ng-repeat="i in getNumber(numChoices) track by $index">
+      <div class="input-group">
+        <span class="input-group-addon">#{{$index + 1}}</span>
+        <input type="text" class="form-control" name="choice{{$index}}" id="choice{{$index}}" ng-model="poll.choices[$index]" required>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create Poll</button>
+</form>

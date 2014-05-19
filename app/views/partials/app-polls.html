@@ -1,37 +1,35 @@
 <div ng-include="'partials/app-navbar'"></div>
 
-<div class="container">
+<h3>My Polls</h3>
 
-  <h3>My Polls</h3>
-
-  <div class="table-responsive" ng-show="polls.length">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <td>#</td>
-          <td>Question</td>
-          <td>Date</td>
-          <td>Status</td>
-          <td>Action</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="poll in polls">
-          <td>{{$index + 1}}</td>
-          <td>What is the product of two and four?</td>
-          <td>1 Jan 2014</td>
-          <td>Active</td>
-          <td>
-            <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-qrcode"></span> View</button>
-            <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-            <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div ng-show="!polls.length">
-    <p>You do not have any polls at the moment.</p>
-  </div>
-
+<div class="table-responsive" ng-show="polls.length">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Question</td>
+      <td>Date</td>
+      <td>Status</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="poll in polls">
+      <td>{{$index + 1}}</td>
+      <td>What is the product of two and four?</td>
+      <td>1 Jan 2014</td>
+      <td>Active</td>
+      <td>
+        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-qrcode"></span> View</button>
+        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
+<div ng-show="!polls.length">
+<p>You do not have any polls at the moment.</p>
+</div>
+
+<a href="/app/polls/new" class="btn btn-primary btn-sm pull-right" role="button"><span class="glyphicon glyphicon-plus"></span> New Poll</a>
