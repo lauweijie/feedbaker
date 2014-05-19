@@ -7,10 +7,15 @@ angular.module('feedbakerApp')
       type: 1,
       choices: {}
     };
-    $scope.numChoices = 2;
+    $scope.numChoicesMin = 2;
+    $scope.numChoicesMax = 8;
+    $scope.numChoices = $scope.numChoicesMin;
     $scope.getNumber = function(num) {
-      if(isNaN(num) || num === null) {
+      if(isNaN(num)) {
         $scope.numChoices = 2;
+      }
+      if(num === null) {
+        num = 2;
       }
       angular.forEach($scope.poll.choices, function(value, key) {
         if(key >= $scope.numChoices) {

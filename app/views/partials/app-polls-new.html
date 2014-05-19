@@ -21,7 +21,7 @@
 
   <div class="form-group" ng-show="poll.type == 1">
     <label for="numChoices">Number of choices</label>
-    <input type="number" class="form-control" name="numChoices" id="numChoices" ng-model="numChoices" min="2" max="8">
+    <input type="number" class="form-control" name="numChoices" id="numChoices" ng-model="numChoices" min="{{numChoicesMin}}" max="{{numChoicesMax}}">
   </div>
 
   <div ng-show="poll.type == 1">
