@@ -17,7 +17,7 @@
     <tr ng-repeat="poll in polls">
       <td>{{$index + 1}}</td>
       <td>{{poll.question}}</td>
-      <td><span tooltip="{{poll.created_at | date:'hh:mm a'}}">{{poll.created_at | date:'dd MMM yy'}}</span></td>
+      <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
       <td ng-show="poll.active">Active</td>
       <td ng-show="!poll.active">Inactive</td>
       <td>

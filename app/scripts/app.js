@@ -5,7 +5,8 @@ angular.module('feedbakerApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angularMoment'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
