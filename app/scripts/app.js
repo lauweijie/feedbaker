@@ -19,7 +19,7 @@ angular.module('feedbakerApp', [
       })
       .when('/login', {
         templateUrl: 'partials/login',
-        controller: 'DefaultCtrl'
+        controller: 'LoginCtrl'
       })
       .when('/settings', {
         templateUrl: 'partials/settings',
@@ -69,9 +69,12 @@ angular.module('feedbakerApp', [
 
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
-
       if (next.authenticate && !Auth.isLoggedIn()) {
-        $location.path('/login');
+        var queryString = {};
+        if(next.$$route.originalPath != undefined) {
+          queryString = {"redirect_to": next.$$route.originalPath};
+        }
+        $location.path('/login').search(queryString);
       }
     });
   });
