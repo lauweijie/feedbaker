@@ -8,7 +8,7 @@
     <tr>
       <td>#</td>
       <td>Question</td>
-      <td>Date</td>
+      <td>Created</td>
       <td>Status</td>
       <td>Action</td>
     </tr>
@@ -16,12 +16,13 @@
   <tbody>
     <tr ng-repeat="poll in polls">
       <td>{{$index + 1}}</td>
-      <td>What is the product of two and four?</td>
-      <td>1 Jan 2014</td>
-      <td>Active</td>
+      <td>{{poll.question}}</td>
+      <td><span tooltip="{{poll.created_at | date:'hh:mm a'}}">{{poll.created_at | date:'dd MMM yy'}}</span></td>
+      <td ng-show="poll.active">Active</td>
+      <td ng-show="!poll.active">Inactive</td>
       <td>
-        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-qrcode"></span> View</button>
-        <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+        <button type="button" class="btn btn-default btn-xs" ng-click="view(poll._id)"><span class="glyphicon glyphicon-qrcode"></span> View</button>
+        <button type="button" class="btn btn-default btn-xs" ng-click="edit(poll._id)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
         <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</button>
       </td>
     </tr>

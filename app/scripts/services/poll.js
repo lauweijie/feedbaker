@@ -8,6 +8,11 @@ angular.module('feedbakerApp')
       create: {
         method: 'POST',
         params: {}
+      },
+      list: {
+        method: 'GET',
+        isArray: true,
+        params: {}
       }
 	  });
   });
