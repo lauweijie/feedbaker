@@ -16,12 +16,16 @@ angular.module('feedbakerApp')
       }
       if(isNaN(num) || num < $scope.numChoicesMin || num > $scope.numChoicesMax) {
         $scope.numChoices = 2;
+        num = 2;
+      }
+      if(parseInt(num) != num) {
+        $scope.numChoices = parseInt(num);
       }
       angular.forEach($scope.poll.choices, function(value, key) {
         if(key >= $scope.numChoices) {
           $scope.poll.choices[key] = undefined;
         }
       });
-      return new Array(num);
+      return new Array(parseInt(num));
     };
   });
