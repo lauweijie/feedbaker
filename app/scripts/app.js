@@ -46,8 +46,8 @@ angular.module('feedbakerApp', [
         authenticate: true
       })
       .when('/app/polls/:poll_id', {
-        templateUrl: 'partials/app-polls',
-        controller: 'AppPollsCtrl',
+        templateUrl: 'partials/app-polls-view',
+        controller: 'AppPollsViewCtrl',
         authenticate: true
       })
       .otherwise({

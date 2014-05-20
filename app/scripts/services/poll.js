@@ -14,6 +14,9 @@ angular.module('feedbakerApp')
         isArray: true,
         params: {}
       },
+      get: {
+        method: 'GET'
+      },
       update: {
         method: 'PUT'
       }
