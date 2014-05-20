@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('feedbakerApp')
-  .controller('AppPollsNewCtrl', function ($scope) {
+  .controller('AppPollsNewCtrl', function ($scope, Poll) {
     $scope.poll = {
       question: '',
       type: 1,
@@ -27,5 +27,10 @@ angular.module('feedbakerApp')
         }
       });
       return new Array(parseInt(num));
+    };
+    $scope.createPoll = function() {
+      if($scope.newPoll.$valid) {
+        Poll.create($scope.poll);
+      }
     };
   });
