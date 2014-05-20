@@ -4,7 +4,6 @@ angular.module('feedbakerApp')
   .controller('AppPollsNewCtrl', function ($scope, Poll) {
     $scope.poll = {
       question: '',
-      type: 1,
       choices: {}
     };
     $scope.numChoicesMin = 2;

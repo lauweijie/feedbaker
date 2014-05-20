@@ -2,23 +2,15 @@
 
 <h3>New Poll</h3>
 
-<p>Specify your poll question and the type of poll and you're ready to go!</p>
+<p>Specify your poll question and answer choices and you're ready to go!</p>
 
 <form role="form" name="newPoll">
   <div class="form-group">
     <label for="question">Poll question</label>
     <input type="text" class="form-control" name="question" id="question" placeholder="Ask a question" required ng-model="poll.question">
   </div>
-  <div class="form-group">
-    <label>Question type</label>
-    <div>
-      <label class="btn btn-default" ng-model="poll.type" btn-radio="1">Multiple Choice</label>
-      <label class="btn btn-default" ng-model="poll.type" btn-radio="2">Short Answer</label>
-      <label class="btn btn-default" ng-model="poll.type" btn-radio="3">Open Ended</label>
-    </div>
-  </div>
 
-  <div class="form-group" ng-show="poll.type == 1">
+  <div class="form-group">
     <label for="numChoices">Number of choices</label>
     <div class="input-group">
       <input type="number" class="form-control" name="numChoices" id="numChoices" ng-model="numChoices" min="{{numChoicesMin}}" max="{{numChoicesMax}}">
@@ -29,7 +21,7 @@
     </div>
   </div>
 
-  <div ng-show="poll.type == 1">
+  <div>
     <label for="choice0">Choices</label>
     <div class="form-group" ng-repeat="i in getNumber(numChoices) track by $index">
       <div class="input-group">
