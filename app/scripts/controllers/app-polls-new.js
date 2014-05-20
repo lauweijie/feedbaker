@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('feedbakerApp')
-  .controller('AppPollsNewCtrl', function ($scope, Poll) {
+  .controller('AppPollsNewCtrl', function ($scope, $location, Poll) {
     $scope.poll = {
       question: '',
       choices: {}
     };
+    $scope.submitButtonPressed = false;
     $scope.numChoicesMin = 2;
     $scope.numChoicesMax = 8;
     $scope.numChoices = $scope.numChoicesMin;
@@ -28,8 +29,11 @@ angular.module('feedbakerApp')
       return new Array(parseInt(num));
     };
     $scope.createPoll = function() {
+      $scope.submitButtonPressed = true;
       if($scope.newPoll.$valid) {
-        Poll.create($scope.poll);
+        Poll.create($scope.poll, function(poll) {
+            $location.path('/app/polls/' + poll._id);
+        });
       }
     };
   });

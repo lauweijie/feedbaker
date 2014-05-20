@@ -5,8 +5,8 @@
 <p>Specify your poll question and answer choices and you're ready to go!</p>
 
 <form role="form" name="newPoll">
-  <div class="form-group">
-    <label for="question">Poll question</label>
+  <div class="form-group" ng-class="{'has-feedback has-error': newPoll.question.$error.required && submitButtonPressed}">
+    <label for="question" class="control-label">Poll question</label>
     <input type="text" class="form-control" name="question" id="question" placeholder="Ask a question" required ng-model="poll.question">
   </div>
 
@@ -23,12 +23,14 @@
 
   <div>
     <label for="choice0">Choices</label>
-    <div class="form-group" ng-repeat="i in getNumber(numChoices) track by $index">
-      <div class="input-group">
-        <span class="input-group-addon">#{{$index + 1}}</span>
-        <input type="text" class="form-control" name="choice{{$index}}" id="choice{{$index}}" ng-model="poll.choices[$index]" required>
+    <ng-form name="choiceForm" ng-repeat="i in getNumber(numChoices) track by $index">
+      <div class="form-group" ng-class="{'has-feedback has-error': choiceForm.choice.$error.required && submitButtonPressed}">
+        <div class="input-group">
+          <span class="input-group-addon">#{{$index + 1}}</span>
+          <input type="text" class="form-control" name="choice" ng-model="poll.choices[$index]" required>
+        </div>
       </div>
-    </div>
+    </ng-form>
   </div>
 
   <button type="submit" class="btn btn-primary" ng-click="createPoll()">Create Poll</button>

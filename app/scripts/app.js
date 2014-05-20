@@ -44,6 +44,11 @@ angular.module('feedbakerApp', [
         controller: 'AppPollsNewCtrl',
         authenticate: true
       })
+      .when('/app/polls/:poll_id', {
+        templateUrl: 'partials/app-polls',
+        controller: 'AppPollsCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
