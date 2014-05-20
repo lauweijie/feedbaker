@@ -16,7 +16,7 @@
   <tbody>
     <tr ng-repeat="poll in polls">
       <td>{{$index + 1}}</td>
-      <td>{{poll.question}}</td>
+      <td>{{poll.question | limitTo:35}}<span ng-show="poll.question.length > 35">...</span></td>
       <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
       <td class="text-center">
         <button type="button" class="btn btn-default btn-xs" ng-click="view(poll._id)"><span class="glyphicon glyphicon-qrcode"></span> View</button>
