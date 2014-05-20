@@ -13,6 +13,9 @@ angular.module('feedbakerApp')
         method: 'GET',
         isArray: true,
         params: {}
+      },
+      update: {
+        method: 'PUT'
       }
 	  });
   });
