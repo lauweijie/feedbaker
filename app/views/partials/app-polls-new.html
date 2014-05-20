@@ -21,7 +21,13 @@
 
   <div class="form-group" ng-show="poll.type == 1">
     <label for="numChoices">Number of choices</label>
-    <input type="number" class="form-control" name="numChoices" id="numChoices" ng-model="numChoices" min="{{numChoicesMin}}" max="{{numChoicesMax}}">
+    <div class="input-group">
+      <input type="number" class="form-control" name="numChoices" id="numChoices" ng-model="numChoices" min="{{numChoicesMin}}" max="{{numChoicesMax}}">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-disabled="numChoices <= numChoicesMin" ng-click="numChoices = numChoices - 1">&ndash;</button>
+        <button class="btn btn-default" type="button" ng-disabled="numChoices >= numChoicesMax" ng-click="numChoices = numChoices + 1">+</button>
+      </span>
+    </div>
   </div>
 
   <div ng-show="poll.type == 1">
