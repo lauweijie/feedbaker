@@ -12,15 +12,11 @@ angular.module('feedbakerApp')
       $location.path('/app/polls/' + id + '/edit');
     };
     $scope.activate = function(poll) {
-      if(confirm('Activate poll?')) {
-        poll.active = true;
-        Poll.update({'id': poll._id}, {'active' : true});
-      }
+      poll.active = true;
+      Poll.update({'id': poll._id}, {'active' : true});
     };
     $scope.deactivate = function(poll) {
-      if(confirm('Deactivate poll?')) {
-        poll.active = false;
-        Poll.update({'id': poll._id}, {'active' : false});
-      }
+      poll.active = false;
+      Poll.update({'id': poll._id}, {'active' : false});
     };
   });
