@@ -4,15 +4,13 @@ angular.module('feedbakerApp')
   .factory('Poll', function ($resource) {
     return $resource('/api/polls/:id', {
       id: '@id'
-    }, { //parameters default
+    }, {
       create: {
-        method: 'POST',
-        params: {}
+        method: 'POST'
       },
       list: {
         method: 'GET',
-        isArray: true,
-        params: {}
+        isArray: true
       },
       get: {
         method: 'GET'
