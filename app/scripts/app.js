@@ -45,12 +45,12 @@ angular.module('feedbakerApp', [
         controller: 'AppPollsNewCtrl',
         authenticate: true
       })
-      .when('/app/polls/:poll_id', {
+      .when('/app/polls/:id', {
         templateUrl: 'partials/app-polls-view',
         controller: 'AppPollsViewCtrl',
         authenticate: true
       })
-      .when('/app/polls/:poll_id/answer', {
+      .when('/app/polls/:id/answer', {
         templateUrl: 'partials/app-polls-answer',
         controller: 'AppPollsAnswerCtrl',
         authenticate: true
@@ -82,8 +82,8 @@ angular.module('feedbakerApp', [
     $rootScope.$on('$routeChangeStart', function (event, next) {
       if (next.authenticate && !Auth.isLoggedIn()) {
         var queryString = {};
-        if(next.$$route.originalPath != undefined) {
-          queryString = {"redirect_to": next.$$route.originalPath};
+        if(next.$$route.originalPath !== undefined) {
+          queryString = {'redirectTo': next.$$route.originalPath};
         }
         $location.path('/login').search(queryString);
       }

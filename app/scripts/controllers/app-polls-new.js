@@ -18,7 +18,7 @@ angular.module('feedbakerApp')
         $scope.numChoices = 2;
         num = 2;
       }
-      if(parseInt(num) != num) {
+      if(parseInt(num) !== num) {
         $scope.numChoices = parseInt(num);
       }
       angular.forEach($scope.poll.choices, function(value, key) {
@@ -33,7 +33,7 @@ angular.module('feedbakerApp')
       if($scope.newPoll.$valid) {
         Poll.create($scope.poll, function(poll) {
             $location.path('/app/polls/' + poll._id);
-        });
+          });
       }
     };
   });

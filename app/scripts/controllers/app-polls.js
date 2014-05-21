@@ -5,22 +5,22 @@ angular.module('feedbakerApp')
     Poll.list(function(polls) {
       $scope.polls = polls;
     });
-    $scope.view = function(poll_id) {
-      $location.path('/app/polls/' + poll_id);
+    $scope.view = function(id) {
+      $location.path('/app/polls/' + id);
     };
-    $scope.edit = function(poll_id) {
-      $location.path('/app/polls/' + poll_id + '/edit');
+    $scope.edit = function(id) {
+      $location.path('/app/polls/' + id + '/edit');
     };
     $scope.activate = function(poll) {
-      if(confirm("Activate poll?")) {
+      if(confirm('Activate poll?')) {
         poll.active = true;
-        Poll.update({"id": poll._id}, {"active" : true});
+        Poll.update({'id': poll._id}, {'active' : true});
       }
     };
     $scope.deactivate = function(poll) {
-      if(confirm("Deactivate poll?")) {
+      if(confirm('Deactivate poll?')) {
         poll.active = false;
-        Poll.update({"id": poll._id}, {"active" : false});
+        Poll.update({'id': poll._id}, {'active' : false});
       }
     };
   });

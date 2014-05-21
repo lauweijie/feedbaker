@@ -2,8 +2,8 @@
 
 angular.module('feedbakerApp')
   .controller('AppPollsViewCtrl', function ($scope, $location, $routeParams, Poll) {
-    Poll.get({"id": $routeParams.poll_id}, function(poll) {
+    Poll.get({'id': $routeParams.id}, function(poll) {
       $scope.poll = poll;
     });
-    $scope.answer_location = $location.absUrl() + "/answer";
+    $scope.answerLocation = $location.absUrl() + '/answer';
   });
