@@ -23,8 +23,9 @@
         <button type="button" class="btn btn-default btn-xs" ng-click="edit(poll._id)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
         <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</button>
       </td>
-      <td ng-show="poll.active" class="text-center"><button tooltip="Active" type="button" class="btn btn-success btn-xs" ng-click="deactivate(poll)"><span class="glyphicon glyphicon-off"></span></button></span></td>
-      <td ng-show="!poll.active" class="text-center"><button tooltip="Inactive" type="button" class="btn btn-danger btn-xs" ng-click="activate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
+      <td ng-show="poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Active" type="button" class="btn btn-success btn-xs" ng-click="deactivate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
+      <td ng-show="!poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Inactive" type="button" class="btn btn-danger btn-xs" ng-click="activate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
+      <td ng-show="poll.activeUpdating" class="text-center"><button tooltip="Updating" type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-off"></span></button></td>
     </tr>
   </tbody>
 </table>
