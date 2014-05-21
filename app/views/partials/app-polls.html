@@ -30,7 +30,10 @@
   </tbody>
 </table>
 </div>
-<div ng-show="!polls.length">
+<div ng-hide="polls">
+<p>Loading polls...</p>
+</div>
+<div ng-show="polls.length === 0">
 <p>You do not have any polls at the moment.</p>
 </div>
 
