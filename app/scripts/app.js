@@ -83,7 +83,7 @@ angular.module('feedbakerApp', [
       if (next.authenticate && !Auth.isLoggedIn()) {
         var queryString = {};
         if(next.$$route.originalPath !== undefined) {
-          queryString = {'redirectTo': next.$$route.originalPath};
+          queryString = {'redirectTo': location.pathname};
         }
         $location.path('/login').search(queryString);
       }
