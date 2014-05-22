@@ -1,1 +1,14 @@
-{{poll.question}}
+
+
+<div class="page-header">
+  <h1>{{poll.question}}</h1>
+  <p>Select an answer from the list below...</p>
+</div>
+
+<div class="list-group">
+  <a href="" class="list-group-item" ng-repeat="choice in poll.choices track by $index" ng-click="selectAnswer($index)" ng-class="{'list-group-item-info': $index === selectedAnswer}">
+    {{choice}}
+  </a>
+</div>
+
+<button type="button" class="btn btn-primary" ng-disabled="$index === selectedAnswer">Submit Answer</button>

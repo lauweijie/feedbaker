@@ -5,4 +5,7 @@ angular.module('feedbakerApp')
     Poll.get({'id': $routeParams.id}, function(poll) {
       $scope.poll = poll;
     });
+    $scope.selectAnswer = function(answer) {
+      $scope.selectedAnswer = answer;
+    };
   });
