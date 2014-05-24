@@ -20,7 +20,6 @@
       <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
       <td class="text-center">
         <button type="button" class="btn btn-default btn-xs" ng-click="view(poll._id)" ng-disabled="!poll.active"><span class="glyphicon glyphicon-qrcode"></span> View</button>
-        <button type="button" class="btn btn-default btn-xs" ng-click="edit(poll._id)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
         <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</button>
       </td>
       <td ng-show="poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Active" type="button" class="btn btn-success btn-xs" ng-click="deactivate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
