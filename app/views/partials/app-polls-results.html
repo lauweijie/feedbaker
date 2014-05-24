@@ -1,3 +1,10 @@
 <div ng-include="'partials/app-navbar'"></div>
 
 <h1>{{poll.question}}</h1>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="choice in poll.choices track by $index">
+    {{choice}}
+    <span class="badge">{{answerCount[$index] || 0}}</span>
+  </li>
+</ul>
