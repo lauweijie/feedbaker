@@ -8,8 +8,8 @@ angular.module('feedbakerApp')
     $scope.view = function(id) {
       $location.path('/app/polls/' + id);
     };
-    $scope.edit = function(id) {
-      $location.path('/app/polls/' + id + '/edit');
+    $scope.results = function(id) {
+      $location.path('/app/polls/' + id + '/results');
     };
     $scope.activate = function(poll) {
       poll.activeUpdating = true;
