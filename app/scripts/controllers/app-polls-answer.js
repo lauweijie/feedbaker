@@ -2,7 +2,7 @@
 
 angular.module('feedbakerApp')
   .controller('AppPollsAnswerCtrl', function ($scope, $location, $routeParams, Poll, PollAnswer) {
-    Poll.get({'id': $routeParams.id}, function(poll) {
+    Poll.getByShortId({'shortid': $routeParams.shortid}, function(poll) {
       $scope.poll = poll;
     }, function() {
       $location.path('/app/polls');

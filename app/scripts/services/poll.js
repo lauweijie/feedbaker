@@ -3,7 +3,8 @@
 angular.module('feedbakerApp')
   .factory('Poll', function ($resource) {
     return $resource('/api/polls/:id', {
-      id: '@id'
+      id: '@id',
+      shortid: '@shortid'
     }, {
       create: {
         method: 'POST'
@@ -14,6 +15,10 @@ angular.module('feedbakerApp')
       },
       get: {
         method: 'GET'
+      },
+      getByShortId: {
+        method: 'GET',
+        url: '/api/polls/:shortid'
       },
       update: {
         method: 'PUT'

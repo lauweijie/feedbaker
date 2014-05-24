@@ -50,7 +50,7 @@ angular.module('feedbakerApp', [
         controller: 'AppPollsViewCtrl',
         authenticate: true
       })
-      .when('/app/polls/:id/answer', {
+      .when('/a/:shortid', {
         templateUrl: 'partials/app-polls-answer',
         controller: 'AppPollsAnswerCtrl',
         authenticate: true
