@@ -20,6 +20,10 @@ angular.module('feedbakerApp')
         method: 'GET',
         url: '/api/polls/:shortid'
       },
+      getResults: {
+        method: 'GET',
+        url: '/api/polls/:id/results'
+      },
       update: {
         method: 'PUT'
       }
