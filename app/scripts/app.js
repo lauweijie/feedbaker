@@ -6,7 +6,8 @@ angular.module('feedbakerApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'angularMoment'
+  'angularMoment',
+  'googlechart'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
