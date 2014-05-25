@@ -26,6 +26,9 @@ angular.module('feedbakerApp')
       },
       update: {
         method: 'PUT'
+      },
+      delete: {
+        method: 'DELETE'
       }
 	  });
   });
