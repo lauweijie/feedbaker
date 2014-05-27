@@ -1,36 +1,88 @@
 'use strict';
 
 angular.module('feedbakerApp')
-  .controller('AppPollsCtrl', function ($scope, $location, Poll) {
+  .controller('AppPollsCtrl', function ($scope, $location, $modal, Poll) {
+
     Poll.list(function(polls) {
       $scope.polls = polls;
     });
-    $scope.view = function(id) {
-      $location.path('/app/polls/' + id);
+
+    $scope.view = function(poll) {
+      $location.path('/app/polls/' + poll._id);
     };
-    $scope.results = function(id) {
-      $location.path('/app/polls/' + id + '/results');
+
+    $scope.results = function(poll) {
+      $location.path('/app/polls/' + poll._id + '/results');
     };
+
     $scope.activate = function(poll) {
       poll.activeUpdating = true;
+      poll.isUpdating = true;
       Poll.update({'id': poll._id}, {'active' : true}, function(newPoll) {
         poll.activeUpdating = false;
+        poll.isUpdating = false;
         if(newPoll.active !== undefined) {
           poll.active = newPoll.active;
         }
       }, function() {
         poll.activeUpdating = false;
+        poll.isUpdating = false;
       });
     };
+
     $scope.deactivate = function(poll) {
       poll.activeUpdating = true;
+      poll.isUpdating = true;
       Poll.update({'id': poll._id}, {'active' : false}, function(newPoll) {
         poll.activeUpdating = false;
+        poll.isUpdating = false;
         if(newPoll.active !== undefined) {
           poll.active = newPoll.active;
         }
       }, function() {
         poll.activeUpdating = false;
+        poll.isUpdating = false;
       });
     };
+
+    $scope.remove = function(poll) {
+      poll.isUpdating = true;
+      Poll.remove({
+        'id': poll._id
+      }, function() {
+        for(var i = 0; i < $scope.polls.length; i++) {
+          if($scope.polls[i]._id === poll._id) {
+            $scope.polls.splice(i, 1);
+          }
+        }
+      }, function() {
+        poll.isUpdating = false;
+      });
+    };
+
+    $scope.confirmRemove = function(poll) {
+      var modalInstance = $modal.open({
+        'templateUrl': 'confirm-delete-modal.html',
+        'controller': ModalInstanceCtrl,
+        'resolve': {
+          'poll': function() {
+            return poll;
+          }
+        }
+      });
+      modalInstance.result.then(function() {
+        $scope.remove(poll);
+      });
+    };
+
+    var ModalInstanceCtrl = function ($scope, $modalInstance, poll) {
+      $scope.poll = poll;
+      $scope.ok = function () {
+        $modalInstance.close();
+      };
+      $scope.cancel = function () {
+        $modalInstance.dismiss();
+      };
+    };
+
   });

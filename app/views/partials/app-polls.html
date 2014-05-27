@@ -19,12 +19,12 @@
       <td>{{poll.question | limitTo:35}}<span ng-show="poll.question.length > 35">...</span></td>
       <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
       <td class="text-center">
-        <button type="button" class="btn btn-default btn-xs" ng-click="view(poll._id)"><span class="glyphicon glyphicon-qrcode" tooltip="Get Link"></span></button>
-        <button type="button" class="btn btn-default btn-xs" ng-click="results(poll._id)"><span class="glyphicon glyphicon-stats" tooltip="Poll Results"></span></button>
-        <button type="button" class="btn btn-default btn-xs" ng-click="delete(poll._id)"><span class="glyphicon glyphicon-remove" tooltip="Delete"></span></button>
+        <button type="button" class="btn btn-default btn-xs" ng-disabled="poll.isUpdating" ng-click="view(poll)"><span class="glyphicon glyphicon-qrcode" tooltip="Get Link"></span></button>
+        <button type="button" class="btn btn-default btn-xs" ng-disabled="poll.isUpdating" ng-click="results(poll)"><span class="glyphicon glyphicon-stats" tooltip="Poll Results"></span></button>
+        <button type="button" class="btn btn-default btn-xs" ng-disabled="poll.isUpdating" ng-click="confirmRemove(poll)"><span class="glyphicon glyphicon-remove" tooltip="Delete"></span></button>
       </td>
-      <td ng-show="poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Active" type="button" class="btn btn-success btn-xs" ng-click="deactivate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
-      <td ng-show="!poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Inactive" type="button" class="btn btn-danger btn-xs" ng-click="activate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
+      <td ng-show="poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Active" type="button" class="btn btn-success btn-xs" ng-disabled="poll.isUpdating" ng-click="deactivate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
+      <td ng-show="!poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Inactive" type="button" class="btn btn-danger btn-xs" ng-disabled="poll.isUpdating" ng-click="activate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
       <td ng-show="poll.activeUpdating" class="text-center"><button tooltip="Updating" type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-off"></span></button></td>
     </tr>
   </tbody>
@@ -38,3 +38,18 @@
 </div>
 
 <a href="/app/polls/new" class="btn btn-primary btn-sm pull-right" role="button"><span class="glyphicon glyphicon-plus"></span> New Poll</a>
+
+<script type="text/ng-template" id="confirm-delete-modal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Delete</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>Are you sure you wish to delete this poll?</strong></p>
+      <p><em>{{poll.question}}</em></p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-danger" ng-click="ok()">Delete</button>
+    </div>
+</script>
+

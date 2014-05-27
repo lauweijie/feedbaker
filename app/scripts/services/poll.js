@@ -27,7 +27,7 @@ angular.module('feedbakerApp')
       update: {
         method: 'PUT'
       },
-      delete: {
+      remove: {
         method: 'DELETE'
       }
 	  });
