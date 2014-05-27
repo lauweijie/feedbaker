@@ -7,7 +7,8 @@ angular.module('feedbakerApp', [
   'ngRoute',
   'ui.bootstrap',
   'angularMoment',
-  'googlechart'
+  'googlechart',
+  'ngFitText'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
