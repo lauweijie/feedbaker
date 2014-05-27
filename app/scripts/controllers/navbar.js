@@ -8,9 +8,6 @@ angular.module('feedbakerApp')
     }, {
       'title': 'About',
       'link': '/about'
-    }, {
-      'title': 'Settings',
-      'link': '/settings'
     }];
     
     $scope.logout = function() {
