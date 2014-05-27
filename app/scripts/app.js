@@ -62,6 +62,11 @@ angular.module('feedbakerApp', [
         controller: 'AppPollsAnswerCtrl',
         authenticate: true
       })
+      .when('/app/profile', {
+        templateUrl: 'partials/app-profile',
+        controller: 'DefaultCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
