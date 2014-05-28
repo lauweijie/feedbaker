@@ -2,11 +2,15 @@
 
 <h1 class="text-center">{{poll.question}}</h1>
 
-<div google-chart chart="chartObject" class="google-chart"></div>
+<div google-chart chart="chartObject" class="google-chart" ng-show="answerCount"></div>
+<div class="alert alert-warning" ng-hide="answerCount">There are no answers to this poll yet.</div>
 
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="choice in poll.choices track by $index">
-    {{choice}}
-    <span class="badge">{{answerCount[$index] || 0}}</span>
-  </li>
-</ul>
+<table class="table table-hover poll-results">
+  <tbody>
+    <tr ng-repeat="choice in poll.choices track by $index">
+      <th class="rowIndex">{{toAlpha($index)}}</th>
+      <td>{{choice}}</td>
+      <td class="text-right"><span class="badge color{{$index + 1}}">{{answerCount[$index] || 0}}</span></td>
+    </tr>
+  </tbody>
+</table>

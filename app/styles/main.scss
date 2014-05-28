@@ -85,7 +85,37 @@ body {
 }
 
 .google-chart {
-    height: 250px;
+  width: 100%;
+}
+
+.poll-results {
+  .color1 {
+      background-color: #3366cc;
+  }
+  .color2 {
+      background-color: #dc3912;
+  }
+  .color3 {
+      background-color: #ff9900;
+  }
+  .color4 {
+      background-color: #109618;
+  }
+  .color5 {
+      background-color: #990099;
+  }
+  .color6 {
+      background-color: #0099c6;
+  }
+  .color7 {
+      background-color: #dd4477;
+  }
+  .color8 {
+      background-color: #66aa00;
+  }
+  .rowIndex {
+    width: 30px;
+  }
 }
 
 /* Responsive: Portrait tablets and up */
@@ -111,7 +141,7 @@ body {
     }
 
     .google-chart {
-        height: 400px;
+      height: 400px;
     }
 
 }
