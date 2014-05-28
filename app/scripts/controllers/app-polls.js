@@ -62,7 +62,7 @@ angular.module('feedbakerApp')
 
     $scope.confirmRemove = function(poll) {
       var modalInstance = $modal.open({
-        'templateUrl': 'confirm-delete-modal.html',
+        'templateUrl': 'partials/modal-confirm-delete.html',
         'controller': ModalInstanceCtrl,
         'resolve': {
           'poll': function() {
