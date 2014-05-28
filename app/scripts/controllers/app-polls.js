@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('feedbakerApp')
-  .controller('AppPollsCtrl', ['$scope', '$location', '$modal', 'Poll', function ($scope, $location, $modal, Poll) {
+  .controller('AppPollsCtrl', function ($scope, $location, $modal, Poll) {
 
     Poll.list(function(polls) {
       $scope.polls = polls;
@@ -75,7 +75,7 @@ angular.module('feedbakerApp')
       });
     };
 
-    var ModalInstanceCtrl = function ($scope, $modalInstance, poll) {
+    var ModalInstanceCtrl = ["$scope", "$modalInstance", "poll", function($scope, $modalInstance, poll) {
       $scope.poll = poll;
       $scope.ok = function () {
         $modalInstance.close();
@@ -83,6 +83,6 @@ angular.module('feedbakerApp')
       $scope.cancel = function () {
         $modalInstance.dismiss();
       };
-    };
+    }];
 
-  }]);
+  });
