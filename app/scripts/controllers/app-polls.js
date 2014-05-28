@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('feedbakerApp')
-  .controller('AppPollsCtrl', function ($scope, $location, $modal, Poll) {
+  .controller('AppPollsCtrl', ['$scope', '$location', '$modal', 'Poll', function ($scope, $location, $modal, Poll) {
 
     Poll.list(function(polls) {
       $scope.polls = polls;
@@ -85,4 +85,4 @@ angular.module('feedbakerApp')
       };
     };
 
-  });
+  }]);
