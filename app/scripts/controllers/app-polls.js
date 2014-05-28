@@ -75,7 +75,7 @@ angular.module('feedbakerApp')
       });
     };
 
-    var ModalInstanceCtrl = ["$scope", "$modalInstance", "poll", function($scope, $modalInstance, poll) {
+    var ModalInstanceCtrl = ['$scope', '$modalInstance', 'poll', function($scope, $modalInstance, poll) {
       $scope.poll = poll;
       $scope.ok = function () {
         $modalInstance.close();
