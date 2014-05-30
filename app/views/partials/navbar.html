@@ -1,12 +1,32 @@
-<div class="header" ng-controller="NavbarCtrl">
-  <ul class="nav nav-pills pull-right">
-    <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-        <a ng-href="{{item.link}}">{{item.title}}</a>
-    </li>
-    <li ng-show="currentUser"><a href="/app/dashboard">Dashboard</a></li>
-    
-    <li ng-hide="currentUser" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
-    <li ng-show="currentUser"><a href="" ng-click="logout()">Logout</a></li>
-  </ul>
-  <h3 class="text-muted">feedbaker</h3>
-</div>
+<header id="top" class="header navbar-fixed-top" ng-controller="NavbarCtrl">
+  <div class="container">
+    <h1 class="logo pull-left">
+      <a href="/">
+        <img id="logo-image" class="logo-image" src="images/logo.png" alt="Logo">
+        <span class="logo-title">Feedbaker</span>
+      </a>
+    </h1>           
+    <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+      </div>       
+      <div class="navbar-collapse collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+              <a ng-href="{{item.link}}">{{item.title}}</a>
+          </li>
+          <li ng-show="currentUser"><a href="/app/dashboard">Dashboard</a></li>
+          <li ng-hide="currentUser" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+          <li ng-show="currentUser"><a href="" ng-click="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </nav>    
+  </div>
+</header>
+
+<div class="header-push"></div>
