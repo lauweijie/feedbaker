@@ -1,12 +1,37 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>Hello <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps. <span ng-show="currentUser">{{ currentUser.email }}</span>
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
+<section id="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1 col-md-push-8 text-center">
+        <img src="images/intro.png">
+      </div>
+      <div class="col-md-8 col-md-pull-4 text-center">
+        <h1 data-fittext="1.4" data-fittext-min="30">Feedbaker is the solution for presenters to get live response from their audience.</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-4 feature">
+        <img src="images/feature-openid.png">
+        <h2>OpenID Integration</h2>
+      </div>
+
+      <div class="col-sm-4 feature">
+        <img src="images/feature-live-polls.png">
+        <h2>Live Polls</h2>
+      </div>
+
+      <div class="col-sm-4 feature">
+        <img src="images/feature-realtime.png">
+        <h2>Real-time Results</h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div ng-include="'partials/footer'"></div>

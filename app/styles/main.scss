@@ -9,11 +9,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+/* HEADER */
 
 .header-push {
     margin-top: 80px;
@@ -55,6 +51,33 @@ body {
 
 .header .main-nav .nav a:hover {
     background: transparent;
+}
+
+/* HOME PAGE */
+
+section#intro {
+    background: #47a7c2;
+    color: #fff;
+    padding: 80px 0;
+    h1 {
+        margin-top: 50px;
+    }
+    
+    img {
+        width: 100%;
+        max-width: 256px;
+        padding: 20px 0;
+    }
+}
+
+section#features {
+    background: #e8faff;
+    h2 {
+        color: #555;
+    }
+    .feature {
+        margin: 80px 0;
+    }
 }
 
 /* Spacer for fixed nav menu */

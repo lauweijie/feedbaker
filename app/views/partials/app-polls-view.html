@@ -1,7 +1,11 @@
 <div ng-include="'partials/app-navbar'"></div>
 
-<div ng-show="poll" class="text-center">
-<h1>{{poll.question}}</h1>
-<p><img class="qrcode" ng-src="https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl={{answerLocation}}" alt="QR Code"></p>
-<div class="poll-link well" data-fittext="1.6">{{answerLocation}}</div>
+<div class="container">
+
+  <div ng-show="poll" class="text-center">
+    <h1>{{poll.question}}</h1>
+    <p><img class="qrcode" ng-src="https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl={{answerLocation}}" alt="QR Code"></p>
+    <div class="poll-link well" data-fittext="1.6">{{answerLocation}}</div>
+  </div>
+
 </div>

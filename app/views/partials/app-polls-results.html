@@ -1,16 +1,20 @@
 <div ng-include="'partials/app-navbar'"></div>
 
-<h1 class="text-center">{{poll.question}}</h1>
+<div class="container">
 
-<div google-chart chart="chartObject" class="google-chart" ng-show="answerCount"></div>
-<div class="alert alert-warning" ng-hide="answerCount">There are no answers to this poll yet.</div>
+  <h1 class="text-center">{{poll.question}}</h1>
 
-<table class="table table-hover poll-results">
-  <tbody>
-    <tr ng-repeat="choice in poll.choices track by $index">
-      <th class="rowIndex">{{toAlpha($index)}}</th>
-      <td>{{choice}}</td>
-      <td class="text-right"><span class="badge color{{$index + 1}}">{{answerCount[$index] || 0}}</span></td>
-    </tr>
-  </tbody>
-</table>
+  <div google-chart chart="chartObject" class="google-chart" ng-show="answerCount"></div>
+  <div class="alert alert-warning" ng-hide="answerCount">There are no answers to this poll yet.</div>
+
+  <table class="table table-hover poll-results">
+    <tbody>
+      <tr ng-repeat="choice in poll.choices track by $index">
+        <th class="rowIndex">{{toAlpha($index)}}</th>
+        <td>{{choice}}</td>
+        <td class="text-right"><span class="badge color{{$index + 1}}">{{answerCount[$index] || 0}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
