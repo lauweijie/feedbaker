@@ -30,7 +30,9 @@
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
     "passport-nus-openid": "~0.0.3",
-    "ejs": "~0.8.4"
+    "ejs": "~0.8.4",
+    "socket.io": "~1.0.2",
+    "passport.socketio": "~3.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -88,8 +90,8 @@
     "test": "grunt test"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/lauweijie/feedbaker.git"
+    "type": "git",
+    "url": "https://github.com/lauweijie/feedbaker.git"
   },
   "homepage": "http://feedbaker.com/"
 }

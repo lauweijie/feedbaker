@@ -8,7 +8,8 @@ angular.module('feedbakerApp', [
   'ui.bootstrap',
   'angularMoment',
   'googlechart',
-  'ngFitText'
+  'ngFitText',
+  'btford.socket-io'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

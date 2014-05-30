@@ -26,13 +26,16 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 // Passport Configuration
 var passport = require('./lib/config/passport');
 
-// Setup Express
+// Setup Express and Socket.io
 var app = express();
-require('./lib/config/express')(app);
-require('./lib/routes')(app);
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+require('./lib/config/express')(app, io);
+require('./lib/routes')(app, io);
+require('./lib/sockets')(app, io);
 
 // Start server
-app.listen(config.port, config.ip, function () {
+server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %s:%d, in %s mode', config.ip, config.port, app.get('env'));
 });
 
