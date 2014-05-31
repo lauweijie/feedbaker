@@ -109,38 +109,38 @@ section#process {
     border-top:3px dotted #fff;
   }
   .process-list{
-      margin-bottom:20px;
-      padding:0;
-      background:transparent;
-      list-style:none;
+    margin-bottom:20px;
+    padding:0;
+    background:transparent;
+    list-style:none;
+    text-align:center;
+    width:100%;
+    li{
+      display: inline-block;
+      background: transparent;
+      margin: 20px 0;
+      width: 19%;
+      vertical-align:top;
+    }
+    .icon{
+      position:relative;
+      display:block;
       text-align:center;
-      width:100%;
-      li{
-          display: inline-block;
-          background: transparent;
-          margin: 20px 0;
-          width: 19%;
-          vertical-align:top;
-      }
-      .icon{
-          position:relative;
-          display:block;
-          text-align:center;
-          width:120px;
-          height:120px;
-          margin:0 auto 30px;
-          background:#e8faff;
-          border-radius:50%;
-          font-size:48px;
-          line-height:120px;
-          color:#47a7c2;
-          z-index: 100;
-      }
-      h4{
-          font-size:21px;
-          font-weight:400;
-          color:#fff;
-      }
+      width:120px;
+      height:120px;
+      margin:0 auto 30px;
+      background:#e8faff;
+      border-radius:50%;
+      font-size:48px;
+      line-height:120px;
+      color:#47a7c2;
+      z-index: 100;
+    }
+    h4{
+      font-size:21px;
+      font-weight:400;
+      color:#fff;
+    }
   }
 }
 
