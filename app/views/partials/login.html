@@ -1,20 +1,24 @@
 <div ng-include="'partials/navbar.html'"></div>
 
+<section id="login">
+
 <div class="container">
 
-  <div class="login-page text-center">
-    <div>
-      <h1>Login</h1>
-      <h2 class="lead">In order to use this application, you first need to log in with your NUSNET account.</h2>
+    <div class="text-center">
+      <div>
+        <h1>Login</h1>
+        <h2 class="lead">In order to use this application, you first need to log in with your NUSNET account.</h2>
+      </div>
+      <div>
+        <form class="form" action="/login/nus">
+          <input type="hidden" name="redirectTo" value="{{redirectTo}}" ng-show="redirectTo">
+          <button type="submit" class="btn btn-lg btn-primary"> Sign in with NUS </button>
+        </form>
+      </div>
     </div>
-    <div>
-      <form class="form" action="/login/nus">
-        <input type="hidden" name="redirectTo" value="{{redirectTo}}" ng-show="redirectTo">
-        <button type="submit" class="btn btn-lg btn-primary"> Sign in with NUS </button>
-      </form>
-    </div>
+    
   </div>
-  
-</div>
+
+</section>
 
 <div ng-include="'partials/footer'"></div>

@@ -147,13 +147,19 @@ footer {
   }
 }
 
-.login-page {
+section#login {
   padding: 100px 0;
+  background: #e8faff;
+  color: #47a7c2;
 }
 
 /* Spacer for fixed nav menu */
 .fixedNavSpacer {
   height: 70px;
+}
+
+.new-poll-button {
+  margin-bottom: 15px;
 }
 
 .qrcode {
