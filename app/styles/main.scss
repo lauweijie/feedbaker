@@ -36,6 +36,9 @@ $icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     .nav li {
       text-transform: uppercase;
     }
+    .nav li.active {
+      font-weight: bold;
+    }
     button {
       background: #1496c3;
       .icon-bar {
