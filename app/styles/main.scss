@@ -71,9 +71,10 @@ section#intro {
 }
 
 section#features {
+  padding: 20px 0;
   background: #e8faff;
-  h3 {
-    color: #555;
+  h1, h3 {
+    color: #47a7c2;
   }
   .feature {
     margin: 70px 0;
@@ -109,13 +110,25 @@ section#process {
   }
 }
 
+section#story {
+  padding: 20px 0;
+  background: #e8faff;
+  h1, h2, h3 {
+    color: #47a7c2;
+  }
+  p {
+    color: #47a7c2;
+  }
+  .feature {
+    margin: 70px 0;
+  }
+}
+
 .footer {
   background: #444444;
   color: #fff;
   padding: 15px 0;
 }
-
-
 
 /* Spacer for fixed nav menu */
 .fixedNavSpacer {
