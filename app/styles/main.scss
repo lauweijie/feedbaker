@@ -3,95 +3,159 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 /* HEADER */
 
 .header-push {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 .header {
-    background: #fff;
-    padding: 15px 0;
-    @include box-shadow(rgba(0, 0, 0, 0.2) 0 0 4px);
+  background: #fff;
+  padding: 15px 0;
+  @include box-shadow(rgba(0, 0, 0, 0.2) 0 0 4px);
 }
 
 .header h1.logo {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-weight: bold;
-    font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .header h1.logo a {
-    color: #1496c3;
-    text-decoration: none;
+  color: #1496c3;
+  text-decoration: none;
 }
 
 .header h1.logo .logo-title {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .header .main-nav .nav li {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .header .main-nav button {
-    background: #1496c3;
+  background: #1496c3;
 }
 
 .header .main-nav button .icon-bar {
-    background: #fff;
+  background: #fff;
 }
 
 .header .main-nav .nav a:hover {
-    background: transparent;
+  background: transparent;
 }
 
 /* HOME PAGE */
 
 section#intro {
-    background: #47a7c2;
-    color: #fff;
-    padding: 80px 0;
-    h1 {
-        margin-top: 50px;
-    }
-    
-    img {
-        width: 100%;
-        max-width: 256px;
-        padding: 20px 0;
-    }
+  background: #47a7c2;
+  color: #fff;
+  padding: 80px 0;
+  h1 {
+    margin-top: 50px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 256px;
+    padding: 20px 0;
+  }
 }
 
 section#features {
-    background: #e8faff;
-    h2 {
-        color: #555;
-    }
-    .feature {
-        margin: 80px 0;
-    }
+  background: #e8faff;
+  h2 {
+    color: #555;
+  }
+  .feature {
+    margin: 80px 0;
+  }
+}
+
+section#process {
+  background: #47a7c2;
+  h2 {
+    color: #fff;
+  }
+  .feature {
+    margin: 80px 0;
+  }
+  .title{
+    color: #fff;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom:20px;
+  }
+  .description {
+    color: #fff;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .process-line {
+    position: relative;
+    width:60%;
+    margin:0 20%;
+    height:0;
+    top: 80px;
+    border-top:3px dotted #fff;
+  }
+  .process-list{
+      margin-bottom:20px;
+      padding:0;
+      background:transparent;
+      list-style:none;
+      text-align:center;
+      width:100%;
+      li{
+          display: inline-block;
+          background: transparent;
+          margin: 20px 0;
+          width: 19%;
+          vertical-align:top;
+      }
+      .icon{
+          position:relative;
+          display:block;
+          text-align:center;
+          width:120px;
+          height:120px;
+          margin:0 auto 30px;
+          background:#e8faff;
+          border-radius:50%;
+          font-size:48px;
+          line-height:120px;
+          color:#47a7c2;
+          z-index: 100;
+      }
+      h4{
+          font-size:21px;
+          font-weight:400;
+          color:#fff;
+      }
+  }
 }
 
 /* Spacer for fixed nav menu */
 .fixedNavSpacer {
-    height: 70px;
+  height: 70px;
 }
 
 .qrcode {
-    width: 100%;
-    max-width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .poll-link {
-    color: #555;
+  color: #555;
 }
 
 .google-chart {
@@ -100,28 +164,28 @@ section#features {
 
 .poll-results {
   .color1 {
-      background-color: #3366cc;
+    background-color: #3366cc;
   }
   .color2 {
-      background-color: #dc3912;
+    background-color: #dc3912;
   }
   .color3 {
-      background-color: #ff9900;
+    background-color: #ff9900;
   }
   .color4 {
-      background-color: #109618;
+    background-color: #109618;
   }
   .color5 {
-      background-color: #990099;
+    background-color: #990099;
   }
   .color6 {
-      background-color: #0099c6;
+    background-color: #0099c6;
   }
   .color7 {
-      background-color: #dd4477;
+    background-color: #dd4477;
   }
   .color8 {
-      background-color: #66aa00;
+    background-color: #66aa00;
   }
   .rowIndex {
     width: 30px;
@@ -131,12 +195,18 @@ section#features {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 
-    .header h1.logo {
-        font-size: 28px;
-    }
+  .header h1.logo {
+    font-size: 28px;
+  }
 
-    .google-chart {
-        height: 400px;
-    }
+  .google-chart {
+    height: 400px;
+  }
+
+  .process-list li{
+    display:block;
+    width:100%;
+    text-align:center;
+  }
 
 }
