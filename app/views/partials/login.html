@@ -1,24 +1,26 @@
-<div ng-include="'partials/navbar.html'"></div>
-
 <section id="login">
 
-<div class="container">
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-8 col-sm-push-2">
 
-    <div class="text-center">
-      <div>
-        <h1>Login</h1>
-        <h2 class="lead">In order to use this application, you first need to log in with your NUSNET account.</h2>
-      </div>
-      <div>
-        <form class="form" action="/login/nus">
-          <input type="hidden" name="redirectTo" value="{{redirectTo}}" ng-show="redirectTo">
-          <button type="submit" class="btn btn-lg btn-primary"> Sign in with NUS </button>
-        </form>
-      </div>
-    </div>
+  <div class="login-box">
+    <h1 class="logo">
+      <a href="/">
+        <img id="logo-image" class="logo-image" src="images/logo.png" alt="Logo">
+        <span class="logo-title">Feedbaker</span>
+      </a>
+    </h1>
+    <h2 class="lead">To use this application, you need to sign in with your NUS account. You will be redirected to complete your sign in.</h2>
+    <form class="form" action="/login/nus">
+      <input type="hidden" name="redirectTo" value="{{redirectTo}}" ng-show="redirectTo">
+      <button type="submit" class="btn btn-lg btn-primary"> Sign in with NUS <span class="glyphicon glyphicon-log-in"></span></button>
+    </form>
+    <p class="return"><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> Return to Feedbaker</a></p>
+  </div>
     
+  </div>
+  </div>
   </div>
 
 </section>
-
-<div ng-include="'partials/footer'"></div>
