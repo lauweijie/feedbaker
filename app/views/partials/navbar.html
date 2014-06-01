@@ -17,11 +17,11 @@
       </div>       
       <div class="navbar-collapse collapse" id="navbar-collapse">
         <ul class="nav navbar-nav">
-          <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-              <a ng-href="{{item.link}}">{{item.title}}</a>
-          </li>
+          <li offset="80" du-scrollspy="intro"><a href="#intro" du-smooth-scroll offset="80">Home</a></li>
+          <li offset="80" du-scrollspy="features"><a href="#features" du-smooth-scroll offset="80">Features</a></li>
+          <li offset="80" du-scrollspy="about" du-scrollspy="technology"><a href="#about" du-smooth-scroll offset="80">About</a></li>
           <li ng-show="currentUser"><a href="/app/dashboard">Dashboard</a></li>
-          <li ng-hide="currentUser" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+          <li ng-hide="currentUser"><a href="/login">Login</a></li>
           <li ng-show="currentUser"><a href="" ng-click="logout()">Logout</a></li>
         </ul>
       </div>

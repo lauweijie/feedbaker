@@ -9,7 +9,8 @@ angular.module('feedbakerApp', [
   'angularMoment',
   'googlechart',
   'ngFitText',
-  'btford.socket-io'
+  'btford.socket-io',
+  'duScroll'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

@@ -16,7 +16,8 @@
     "angular-google-chart": "~0.0.8",
     "ngFitText": "~2.4.0",
     "angular-socket-io": "~0.6.0",
-    "socket.io-client": "~1.0.2"
+    "socket.io-client": "~1.0.2",
+    "angular-scroll": "~0.5.7"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
