@@ -10,7 +10,7 @@ angular.module('feedbakerApp')
     $scope.logout = function() {
       Auth.logout()
       .then(function() {
-        $location.path('/login');
+        $location.path('/');
       });
     };
     
