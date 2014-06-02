@@ -7,7 +7,7 @@
 
 ## 1. Overview ##
 ### Feedbaker is an _online audience response system_. ###
-Our project introduces an easy and convinent way for presenters to get instance feedback from their audience. Professors, teaching assistants or students can use Feedbaker during lessons and presentations to gather responses from their audience for purposes such as to assess the general understanding of the audience, or to conduct a live quiz.
+Our project introduces an easy and convenient way for presenters to get instance feedback from their audience. Professors, teaching assistants or students can use Feedbaker during lessons and presentations to gather responses from their audience for purposes such as to assess the general understanding of the audience, or to conduct a live quiz.
 
 Traditionally, this would require expensive infrastructure and hardware. Feedbaker effectively eliminates the need for a audience response device which is costly to acquire. Instead, the audience can use devices that they already own (such as their smartphone or laptops) to respond to questions set out by the presenter.
 
