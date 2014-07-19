@@ -24,7 +24,7 @@ h1.logo {
   }
   .logo-title {
     vertical-align: middle;
-  } 
+  }
 }
 
 /* HEADER */
@@ -168,6 +168,8 @@ footer {
   background: #444;
   color: #e8faff;
   padding: 25px 0;
+  bottom: 0;
+  width:100%;
   p {
     margin: 0;
   }
