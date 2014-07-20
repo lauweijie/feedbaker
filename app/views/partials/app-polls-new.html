@@ -13,6 +13,11 @@
     </div>
 
     <div class="form-group">
+      <label for="descript" class="control-label">Descriptor</label>
+      <input type="text" class="form-control" name="descript" id="descript" placeholder="Which class is this poll for?" required ng-model="poll.descript">
+    </div>
+
+    <div class="form-group">
       <label for="numChoices">Number of choices</label>
       <div class="input-group">
         <input type="number" class="form-control" name="numChoices" id="numChoices" ng-model="numChoices" min="{{numChoicesMin}}" max="{{numChoicesMax}}">
