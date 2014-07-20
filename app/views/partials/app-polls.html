@@ -4,8 +4,10 @@
 
   <div class="page-header">
     <h1>My Polls</h1>
-    <a href="/app/polls/new" class="btn btn-primary btn-sm pull-right new-poll-button" role="button"><span class="glyphicon glyphicon-plus"></span> New Poll</a>
     <button class="btn btn-primary btn-sm pull-right help-button" role="button" ng-click="help()"><span class="glyphicon glyphicon-question-sign"> Help</span></button>
+
+    <a href="/app/polls/new" class="btn btn-primary btn-sm pull-right new-poll-button" role="button"><span class="glyphicon glyphicon-plus"></span> New Poll</a>
+
     <p>Manage existing polls or create new ones.</p>
   </div>
 
@@ -13,18 +15,18 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <td>#</td>
-        <td>Question</td>
-        <td>Created</td>
+        <td style="width:15%">Time</td>
+        <td style="width:relative">Descriptor</td>
+        <td style="width:relative">Question</td>
         <td class="text-center">Action</td>
         <td class="text-center">Status</td>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="poll in polls">
-        <td>{{$index + 1}}</td>
-        <td>{{poll.question | limitTo:35}}<span ng-show="poll.question.length > 35">...</span></td>
         <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
+        <td>{{poll.descript | limitTo:35}}<span ng-show="poll.question.length > 35">...</span></td>
+        <td>{{poll.question | limitTo:35}}<span ng-show="poll.question.length > 35">...</span></td>
         <td class="text-center">
           <button type="button" class="btn btn-default btn-xs" ng-disabled="poll.isUpdating" ng-click="view(poll)"><span class="glyphicon glyphicon-qrcode" tooltip="Get Link"></span></button>
           <button type="button" class="btn btn-default btn-xs" ng-disabled="poll.isUpdating" ng-click="results(poll)"><span class="glyphicon glyphicon-stats" tooltip="Poll Results"></span></button>
