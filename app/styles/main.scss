@@ -62,6 +62,20 @@ h1.logo {
   }
 }
 
+/* FOOTER */
+
+footer {
+  background: #444;
+  color: #e8faff;
+  padding: 25px 0;
+  bottom: 0;
+  width:100%;
+  position:relative;
+  p {
+    margin: 0;
+  }
+}
+
 /* HOME PAGE */
 
 section#intro {
@@ -164,17 +178,6 @@ section#getstarted {
   color: #47a7c2;
 }
 
-footer {
-  background: #444;
-  color: #e8faff;
-  padding: 25px 0;
-  bottom: 0;
-  width:100%;
-  p {
-    margin: 0;
-  }
-}
-
 section#login {
   margin: 0;
   padding: 50px 0;
@@ -205,6 +208,10 @@ section#login {
 }
 
 .new-poll-button {
+  margin-bottom: 15px;
+}
+
+.help-button {
   margin-bottom: 15px;
 }
 

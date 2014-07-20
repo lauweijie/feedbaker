@@ -85,4 +85,17 @@ angular.module('feedbakerApp')
       };
     }];
 
+    /**
+     * Help modal for polls page
+     **/
+    /* $scope.help = function() {
+      var modalInstance = $modal.open({
+        'templateUrl': 'partials/modal-help.html',
+        'controller': ModalInstanceCtrl,
+        'resolve': {
+          return;
+        }
+      });
+    }; */
+
   });

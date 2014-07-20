@@ -4,6 +4,8 @@
 
   <div class="page-header">
     <h1>My Polls</h1>
+    <a href="/app/polls/new" class="btn btn-primary btn-sm pull-right new-poll-button" role="button"><span class="glyphicon glyphicon-plus"></span> New Poll</a>
+    <button class="btn btn-primary btn-sm pull-right help-button" role="button" ng-click="help()"><span class="glyphicon glyphicon-question-sign"> Help</span></button>
     <p>Manage existing polls or create new ones.</p>
   </div>
 
@@ -41,7 +43,5 @@
   <div ng-show="polls.length === 0">
   <p>You do not have any polls at the moment.</p>
   </div>
-
-  <a href="/app/polls/new" class="btn btn-primary btn-sm pull-right new-poll-button" role="button"><span class="glyphicon glyphicon-plus"></span> New Poll</a>
 
 </div>
