@@ -60,6 +60,9 @@ angular.module('feedbakerApp')
       });
     };
 
+    /**
+     * Confirm Delete modal for polls page
+     **/
     $scope.confirmRemove = function(poll) {
       var modalInstance = $modal.open({
         'templateUrl': 'partials/modal-confirm-delete.html',
@@ -88,14 +91,24 @@ angular.module('feedbakerApp')
     /**
      * Help modal for polls page
      **/
-    /* $scope.help = function() {
-      var modalInstance = $modal.open({
+    $scope.help = function() {
+      var helpModalInstance = $modal.open({
         'templateUrl': 'partials/modal-help.html',
-        'controller': ModalInstanceCtrl,
+        'controller': HelpModalInstanceCtrl,
         'resolve': {
-          return;
+          view: function() {
+            return $scope.view;
+          }
         }
       });
-    }; */
+      helpModalInstance.result.then(function() {
+        return;
+      });
 
+    var HelpModalInstanceCtrl = ['$scope', '$helpModalInstance', function($scope, $helpModalInstance) {
+      $scope.understood = function () {
+        $helpModalInstance.dismiss();
+      };
+      }];
+    };
   });
