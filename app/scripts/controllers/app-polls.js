@@ -15,6 +15,15 @@ angular.module('feedbakerApp')
       $location.path('/app/polls/' + poll._id + '/results');
     };
 
+    $scope.linkToPoll = function(poll) {
+        if (poll.active) {
+          $scope.view(poll);
+        }
+        else {
+          $scope.results(poll);
+        }
+      };
+
     $scope.activate = function(poll) {
       poll.activeUpdating = true;
       poll.isUpdating = true;
@@ -102,13 +111,13 @@ angular.module('feedbakerApp')
         }
       });
       helpModalInstance.result.then(function() {
-        return;
+        return $scope.view;
       });
 
-    var HelpModalInstanceCtrl = ['$scope', '$helpModalInstance', function($scope, $helpModalInstance) {
-      $scope.understood = function () {
-        $helpModalInstance.dismiss();
-      };
+      var HelpModalInstanceCtrl = ['$scope', '$helpModalInstance', function($scope, $helpModalInstance) {
+        $scope.ok = function () {
+          $helpModalInstance.dismiss();
+        };
       }];
     };
   });
