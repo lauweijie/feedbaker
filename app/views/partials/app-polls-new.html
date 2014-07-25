@@ -12,8 +12,8 @@
       <input type="text" class="form-control" name="question" id="question" placeholder="Ask a question" required ng-model="poll.question">
     </div>
 
-    <div class="form-group">
-      <label for="descript" class="control-label">Descriptor</label>
+    <div class="form-group" ng-class="{'has-feedback has-error': newPoll.question.$error.required && submitButtonPressed}">
+      <label for="descript" class="control-label">Description</label>
       <input type="text" class="form-control" name="descript" id="descript" placeholder="Which class is this poll for?" required ng-model="poll.descript">
     </div>
 

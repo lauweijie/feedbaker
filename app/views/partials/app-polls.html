@@ -16,18 +16,18 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <td style="width:15%">Time</td>
-          <td style="width:relative">Descriptor</td>
-          <td style="width:relative">Question</td>
-          <td class="text-center">Action</td>
-          <td class="text-center">Status</td>
+          <th style="width:relative">Question</td>
+          <th style="width:relative">Description</td>
+          <th style="width:15%">Created</td>
+          <th class="text-center">Action</td>
+          <th class="text-center">Status</td>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="poll in polls">
-          <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
-          <td>{{poll.descript | limitTo:35}}<span ng-show="poll.descript.length > 35">...</span></td>
           <td><a href ng-click="linkToPoll(poll)">{{poll.question | limitTo:35}}<span ng-show="poll.question.length > 35">...</span></a></td>
+          <td>{{poll.descript | limitTo:35}}<span ng-show="poll.descript.length > 35">...</span></td>
+          <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
           <td class="text-center">
             <button type="button" class="btn btn-default btn-sm" ng-show="poll.active && !poll.activeUpdating" ng-disabled="poll.isUpdating" ng-click="view(poll)"><span class="glyphicon glyphicon-qrcode" tooltip="Get Link"></span></button>
             <button type="button" class="btn btn-default btn-sm" ng-disabled="poll.isUpdating" ng-click="results(poll)"><span class="glyphicon glyphicon-stats" tooltip="Poll Results"></span></button>
