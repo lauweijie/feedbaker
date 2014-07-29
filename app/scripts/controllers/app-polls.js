@@ -113,11 +113,10 @@ angular.module('feedbakerApp')
       helpModalInstance.result.then(function() {
         return true;
       });
-
-      var HelpModalInstanceCtrl = ['$scope', '$helpModalInstance', function($scope, $helpModalInstance) {
-        $scope.ok = function () {
-          $helpModalInstance.dismiss();
-        };
-      }];
     };
+    var HelpModalInstanceCtrl = ['$scope', '$modalInstance', function($scope, $helpModalInstance) {
+      $scope.ok = function () {
+        $helpModalInstance.close();
+      };
+    }];
   });
