@@ -27,12 +27,7 @@ angular.module('feedbakerApp', [
         controller: 'LoginCtrl'
       })
       .when('/app', {
-        redirectTo: '/app/dashboard'
-      })
-      .when('/app/dashboard', {
-        templateUrl: 'partials/app-dashboard',
-        controller: 'DefaultCtrl',
-        authenticate: true
+        redirectTo: '/app/polls'
       })
       .when('/app/polls', {
         templateUrl: 'partials/app-polls',

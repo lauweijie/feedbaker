@@ -6,6 +6,7 @@ angular.module('feedbakerApp')
     $scope.toAlpha = function(index) {
       return String.fromCharCode(index + 65);
     };
+
     $scope.updateAnswerCounts = function(answerCount) {
       $scope.answerCount = [];
       for(var i = 0; i < answerCount.length; i++) {
@@ -17,6 +18,7 @@ angular.module('feedbakerApp')
       }
       $scope.chartObject.data = $scope.chartData;
     };
+
     Poll.getResults({'id': $routeParams.id}, function(res) {
       socket.emit('subscribe', 'results/' + res.poll._id);
       $scope.$on('$destroy', function() {
@@ -26,22 +28,57 @@ angular.module('feedbakerApp')
         $scope.updateAnswerCounts(data.answerCount);
       });
       $scope.poll = res.poll;
-      $scope.chartObject = {
-        'type': 'ColumnChart',
-        'data': $scope.chartData,
-        'options': {
-          'legend': 'none',
-          'vAxis': {
-            'gridlines': {'count': 0}
-          },
-          'bar': {
-            'groupWidth': '40'
-          },
-          'chartArea': {
-            'width': '90%'
+      $scope.chartOption = {
+        ColumnChart: $scope.chartObject = {
+          'type': 'ColumnChart',
+          'data': $scope.chartData,
+          'options': {
+            'legend': 'none',
+            'vAxis': {
+              'gridlines': {'count': 0}
+            },
+            'bar': {
+              'groupWidth': '40'
+            },
+            'chartArea': {
+              'width': '90%'
+            }
           }
-        }
+        },
+        PieChart: $scope.chartObject = {
+          'type': 'PieChart',
+          'data': $scope.chartData,
+          'options': {
+            'legend': 'none',
+            'vAxis': {
+              'gridlines': {'count': 0}
+            },
+            'bar': {
+              'groupWidth': '40'
+            },
+            'chartArea': {
+              'width': '90%'
+            }
+          }
+        },
+        BarChart: $scope.chartObject = {
+          'type': 'BarChart',
+          'data': $scope.chartData,
+          'options': {
+            'legend': 'none',
+            'vAxis': {
+              'gridlines': {'count': 0}
+            },
+            'bar': {
+              'groupWidth': '40'
+            },
+            'chartArea': {
+              'width': '90%'
+            }
+          }
+        };
       };
+
       $scope.updateAnswerCounts(res.answerCount);
     }, function() {
       $location.path('/app/polls');
