@@ -36,10 +36,9 @@ Distilling from these user stories, we have identified a few core features that 
 
 Extensions to this project may include:
 
+*   Open project out to anyone to use
 *   Choice of Data Visualisation (Pie, Line, etc)
-*   Open-ended answers (comments)
-*   Open project out to anyone to use (apart from NUS students and staff)
-*   "Youtube Live Comments" concept of open-ended results
+*   "Youtube Live Comments" concept of open-ended results (comments)
 
 A complete description and outline of our plans and decisions have been consolidated in a table which you may view [here](http://goo.gl/1mnS0s).
 

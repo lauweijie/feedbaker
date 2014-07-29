@@ -7,6 +7,13 @@
   <div google-chart chart="chartObject" class="google-chart" ng-show="answerCount"></div>
   <div class="alert alert-warning" ng-hide="answerCount">There are no answers to this poll yet.</div>
 
+  <div class="text-center">
+  <div class="btn-group btn-group-lg">
+      <label class="btn btn-primary" ng-model="chartObject" btn-radio="'ColumnChart'">Column</label>
+      <label class="btn btn-primary" ng-model="chartObject" btn-radio="'PieChart'">Pie</label>
+      <label class="btn btn-primary" ng-model="chartObject" btn-radio="'BarChart'">Bar</label>
+  </div>
+</div>
   <table class="table table-hover poll-results">
     <tbody>
       <tr ng-repeat="choice in poll.choices track by $index">
@@ -18,8 +25,8 @@
   </table>
 
   <div class="text-right">
-    <a href="/app/polls" class="btn btn-default" role="button">Back</a>
     <a href="/app/polls/{{poll._id}}/results/export" class="btn btn-primary" role="button" target="_self"><span class="glyphicon glyphicon-floppy-save"></span> Export</a>
+    <a href="/app/polls" class="btn btn-default" role="button">Back</a>
   </div>
 
 </div>
