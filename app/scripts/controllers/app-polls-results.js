@@ -29,22 +29,6 @@ angular.module('feedbakerApp')
       });
       $scope.poll = res.poll;
       $scope.chartOption = {
-        ColumnChart: $scope.chartObject = {
-          'type': 'ColumnChart',
-          'data': $scope.chartData,
-          'options': {
-            'legend': 'none',
-            'vAxis': {
-              'gridlines': {'count': 0}
-            },
-            'bar': {
-              'groupWidth': '40'
-            },
-            'chartArea': {
-              'width': '90%'
-            }
-          }
-        },
         PieChart: $scope.chartObject = {
           'type': 'PieChart',
           'data': $scope.chartData,
@@ -76,7 +60,23 @@ angular.module('feedbakerApp')
               'width': '90%'
             }
           }
-        };
+        },
+        ColumnChart: $scope.chartObject = {
+          'type': 'ColumnChart',
+          'data': $scope.chartData,
+          'options': {
+            'legend': 'none',
+            'vAxis': {
+              'gridlines': {'count': 0}
+            },
+            'bar': {
+              'groupWidth': '40'
+            },
+            'chartArea': {
+              'width': '90%'
+            }
+          }
+        }
       };
 
       $scope.updateAnswerCounts(res.answerCount);
