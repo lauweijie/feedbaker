@@ -117,4 +117,12 @@ As of the first Milestone, the total number of hours logged for both members:
 *   [Jonathan Lau](http://jon.sg/): 144 hours
 *   [Jonathan Tan](http://jhowt.com/): 113 hours
 
-Team total hours: 257 hours
+As of the second Milestone, the total number of hours logged for both members:
+*   [Jonathan Lau](http://jon.sg/): 150 hours
+*   [Jonathan Tan](http://jhowt.com/): 137 hours
+
+As of the third Milestone, the total number of hours logged for both members:
+*   [Jonathan Lau](http://jon.sg/): 197 hours
+*   [Jonathan Tan](http://jhowt.com/): 154 hours
+
+Team total hours: 351 hours
