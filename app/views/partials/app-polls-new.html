@@ -12,9 +12,9 @@
       <input type="text" class="form-control" name="question" id="question" placeholder="Ask a question" required ng-model="poll.question">
     </div>
 
-    <div class="form-group" ng-class="{'has-feedback has-error': newPoll.question.$error.required && submitButtonPressed}">
+    <div class="form-group">
       <label for="descript" class="control-label">Description</label>
-      <input type="text" class="form-control" name="descript" id="descript" placeholder="Which class is this poll for?" required ng-model="poll.descript">
+      <input type="text" class="form-control" name="descript" id="descript" placeholder="(Optional) For what purpose will you be using this poll for?" ng-model="poll.descript">
     </div>
 
     <div class="form-group">

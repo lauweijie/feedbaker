@@ -111,7 +111,7 @@ angular.module('feedbakerApp')
         }
       });
       helpModalInstance.result.then(function() {
-        return $scope.view;
+        return true;
       });
 
       var HelpModalInstanceCtrl = ['$scope', '$helpModalInstance', function($scope, $helpModalInstance) {
