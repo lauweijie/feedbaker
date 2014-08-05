@@ -28,53 +28,20 @@ angular.module('feedbakerApp')
         $scope.updateAnswerCounts(data.answerCount);
       });
       $scope.poll = res.poll;
-      $scope.chartOption = {
-        PieChart: $scope.chartObject = {
-          'type': 'PieChart',
-          'data': $scope.chartData,
-          'options': {
-            'legend': 'none',
-            'vAxis': {
-              'gridlines': {'count': 0}
-            },
-            'bar': {
-              'groupWidth': '40'
-            },
-            'chartArea': {
-              'width': '90%'
-            }
-          }
-        },
-        BarChart: $scope.chartObject = {
-          'type': 'BarChart',
-          'data': $scope.chartData,
-          'options': {
-            'legend': 'none',
-            'vAxis': {
-              'gridlines': {'count': 0}
-            },
-            'bar': {
-              'groupWidth': '40'
-            },
-            'chartArea': {
-              'width': '90%'
-            }
-          }
-        },
-        ColumnChart: $scope.chartObject = {
-          'type': 'ColumnChart',
-          'data': $scope.chartData,
-          'options': {
-            'legend': 'none',
-            'vAxis': {
-              'gridlines': {'count': 0}
-            },
-            'bar': {
-              'groupWidth': '40'
-            },
-            'chartArea': {
-              'width': '90%'
-            }
+      $scope.chartType = 'ColumnChart';
+      $scope.chartObject = {
+        'type': 'ColumnChart',
+        'data': $scope.chartData,
+        'options': {
+          'legend': 'none',
+          'vAxis': {
+            'gridlines': {'count': 0}
+          },
+          'bar': {
+            'groupWidth': '40'
+          },
+          'chartArea': {
+            'width': '90%'
           }
         }
       };
