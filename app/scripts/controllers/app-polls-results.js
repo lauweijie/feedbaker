@@ -28,7 +28,6 @@ angular.module('feedbakerApp')
         $scope.updateAnswerCounts(data.answerCount);
       });
       $scope.poll = res.poll;
-      $scope.chartType = 'ColumnChart';
       $scope.chartObject = {
         'type': 'ColumnChart',
         'data': $scope.chartData,
