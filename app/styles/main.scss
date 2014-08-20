@@ -1,4 +1,13 @@
 $icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/';
+$navbar-default-bg: #1496c3;
+$navbar-default-color: #ffffff;
+$navbar-default-link-color: #ffffff;
+$navbar-default-link-active-color: #ffffff;
+$navbar-default-link-hover-bg: #0F90C2;
+$navbar-default-link-hover-color: #ffffff;
+$navbar-default-toggle-hover-bg: #1E8CB7;
+$navbar-default-toggle-icon-bar-bg: #ffffff;
+$navbar-default-toggle-border-color: #9AD4EB;
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'compass/css3';
 
