@@ -6,21 +6,32 @@
     <p ng-show="questionAnswered">Your answer to this question has been recorded.</p>
   </div>
 
+  <div class="alert alert-warning" ng-show="displayUndoSuccess">
+    <p><strong>Your answer has been retracted.</strong></p>
+    <p>Remember to select your new answer.</p>
+  </div>
+
   <div class="alert alert-danger" ng-show="displayError">
     <p><strong>ERROR:</strong> An error occurred while saving your answer.</p>
     <p>This may happen if the poll you are viewing has been closed or deleted.</p>
   </div>
+
+  <div class="alert alert-danger" ng-show="displayUndoError">
+    <p><strong>ERROR:</strong> An error occurred while undoing your answer.</p>
+    <p>This may happen if the poll you are viewing has been closed or deleted.</p>
+  </div>
+
 
   <div class="alert alert-success" ng-show="displaySuccess">
     <p><strong>Answer successfully submitted.</strong></p>
   </div>
 
   <div class="list-group">
-    <a href="" class="list-group-item" ng-repeat="choice in poll.choices track by $index" ng-click="selectAnswer($index)" ng-class="{'list-group-item-info': $index === selectedAnswer}">
+    <a href="" class="list-group-item" ng-repeat="choice in poll.choices track by $index" ng-click="selectAnswer($index); submitAnswer()" ng-class="{'list-group-item-info': $index === selectedAnswer}">
       {{choice}}
     </a>
   </div>
 
-  <button ng-hide="questionAnswered" type="button" class="btn btn-primary" ng-disabled="selectedAnswer === undefined || submittingForm" ng-click="submitAnswer()">Submit Answer</button>
+  <button ng-show="questionAnswered" type="button" class="btn btn-primary" ng-click="undo()">Undo</button>
 
 </div>

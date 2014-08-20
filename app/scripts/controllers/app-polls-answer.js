@@ -27,10 +27,24 @@ angular.module('feedbakerApp')
             $scope.questionAnswered = true;
             $scope.selectedAnswer = pollAnswer.answer;
             $scope.displaySuccess = true;
+            $scope.displayUndoSuccess = false;
           }, function() {
             $scope.displayError = true;
           });
         }
+      };
+      $scope.undo = function() {
+        $scope.displaySuccess = false;
+        $scope.submittingForm = true;
+        PollAnswer.delete({
+          'id': poll._id
+        }, function(pollAnswer) {
+          $scope.questionAnswered = false;
+          $scope.displayUndoSuccess = true;
+          $scope.selectedAnswer = undefined;
+        }, function() {
+          $scope.displayUndoError = true;
+        });
       };
     }, function() {
       $location.path('/app/polls');

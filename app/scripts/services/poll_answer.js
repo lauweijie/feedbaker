@@ -10,6 +10,9 @@ angular.module('feedbakerApp')
       },
       set: {
         method: 'PUT'
+      },
+      delete: {
+        method: 'DELETE'
       }
 	  });
   });
