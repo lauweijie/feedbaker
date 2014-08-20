@@ -1,3 +1,5 @@
+<div ng-include="'partials/app-navbar'"></div>
+
 <div class="container">
 
   <div class="page-header">
@@ -25,8 +27,7 @@
   <div class="alert alert-success" ng-show="displaySuccess">
     <p>
       <strong>Answer successfully submitted.</strong>
-      <button ng-show="questionAnswered" type="button" class="btn btn-success btn-xs pull-right" ng-click="undo()">Undo</button>
-    </p>
+      <button ng-show="questionAnswered" type="button" class="btn btn-success btn-xs pull-right" ng-click="undo()">Undo</button></p>
   </div>
 
   <div class="list-group">
