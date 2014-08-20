@@ -23,15 +23,15 @@
 
 
   <div class="alert alert-success" ng-show="displaySuccess">
-    <p><strong>Answer successfully submitted.</strong></p>
+    <p>
+      <strong>Answer successfully submitted.</strong>
+      <button ng-show="questionAnswered" type="button" class="btn btn-success btn-xs pull-right" ng-click="undo()">Undo</button>
+    </p>
   </div>
 
   <div class="list-group">
-    <a href="" class="list-group-item" ng-repeat="choice in poll.choices track by $index" ng-click="selectAnswer($index); submitAnswer()" ng-class="{'list-group-item-info': $index === selectedAnswer}">
+    <a href="" class="list-group-item" ng-repeat="choice in poll.choices track by $index" ng-click="selectAnswer($index)" ng-class="{'list-group-item-info': $index === selectedAnswer}">
       {{choice}}
     </a>
   </div>
-
-  <button ng-show="questionAnswered" type="button" class="btn btn-primary" ng-click="undo()">Undo</button>
-
 </div>

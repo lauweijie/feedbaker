@@ -16,33 +16,39 @@ angular.module('feedbakerApp')
           return;
         }
         $scope.selectedAnswer = answer;
+        $scope.submitAnswer();
       };
       $scope.submitAnswer = function() {
+        $scope.displayUndoError = false;
+        $scope.displayUndoSuccess = false;
         if($scope.selectedAnswer !== undefined) {
-          $scope.submittingForm = true;
+          $scope.submittingAnswer = true;
           PollAnswer.set({
             'id': poll._id,
             'answer': $scope.selectedAnswer
           }, function(pollAnswer) {
+            $scope.submittingAnswer = false;
             $scope.questionAnswered = true;
-            $scope.selectedAnswer = pollAnswer.answer;
             $scope.displaySuccess = true;
-            $scope.displayUndoSuccess = false;
+            $scope.selectedAnswer = pollAnswer.answer;
           }, function() {
             $scope.displayError = true;
           });
         }
       };
       $scope.undo = function() {
+        $scope.displayUndoError = false;
         $scope.displaySuccess = false;
-        $scope.submittingForm = true;
+        $scope.submittingUndo = true;
         PollAnswer.delete({
           'id': poll._id
         }, function(pollAnswer) {
+          $scope.submittingUndo = false;
           $scope.questionAnswered = false;
           $scope.displayUndoSuccess = true;
           $scope.selectedAnswer = undefined;
         }, function() {
+          $scope.submittingUndo = false;
           $scope.displayUndoError = true;
         });
       };
