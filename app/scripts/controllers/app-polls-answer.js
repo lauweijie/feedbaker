@@ -42,7 +42,7 @@ angular.module('feedbakerApp')
         $scope.submittingUndo = true;
         PollAnswer.delete({
           'id': poll._id
-        }, function(pollAnswer) {
+        }, function() {
           $scope.submittingUndo = false;
           $scope.questionAnswered = false;
           $scope.displayUndoSuccess = true;
