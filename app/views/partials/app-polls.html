@@ -28,8 +28,8 @@
           <td>{{poll.descript | limitTo:35}}<span ng-show="poll.descript.length > 35">...</span></td>
           <td><span tooltip="{{poll.created_at | date:'dd MMM yyyy, hh:mm a'}}" am-time-ago="poll.created_at"></span></td>
           <td class="text-center">
-            <button type="button" class="btn btn-default btn-sm" ng-show="poll.active && !poll.activeUpdating" ng-disabled="poll.isUpdating" ng-click="view(poll)"><span class="glyphicon glyphicon-qrcode" tooltip="Get Link"></span></button>
             <button type="button" class="btn btn-default btn-sm" ng-disabled="poll.isUpdating" ng-click="results(poll)"><span class="glyphicon glyphicon-stats" tooltip="Poll Results"></span></button>
+            <button type="button" class="btn btn-default btn-sm" ng-show="poll.active && !poll.activeUpdating" ng-disabled="poll.isUpdating" ng-click="view(poll)"><span class="glyphicon glyphicon-qrcode" tooltip="Get Link"></span></button>
             <button type="button" class="btn btn-default btn-sm" ng-show="!poll.active && !poll.activeUpdating" ng-disabled="poll.isUpdating" ng-click="confirmRemove(poll)"><span class="glyphicon glyphicon-remove" tooltip="Delete"></span></button>
           </td>
           <td ng-show="poll.active && !poll.activeUpdating" class="text-center"><button tooltip="Active" type="button" class="btn btn-success btn-sm" ng-disabled="poll.isUpdating" ng-click="deactivate(poll)"><span class="glyphicon glyphicon-off"></span></button></td>
