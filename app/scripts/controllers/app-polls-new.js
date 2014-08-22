@@ -34,6 +34,8 @@ angular.module('feedbakerApp')
         Poll.create($scope.poll, function(poll) {
             $location.path('/app/polls/' + poll._id);
           });
+      } else {
+        $scope.submitButtonPressed = false;
       }
     };
   });
